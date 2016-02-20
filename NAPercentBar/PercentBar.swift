@@ -8,9 +8,17 @@
 
 import UIKit
 
+/// A highly customizable percent bar. Contains a secondary view that shows the
+///   percent, with two optional labels that reside inside, one on the left and
+///   one on the right.
+///
+/// - author: Nathan Ansel
+///
+/// - version: 0.1
+/// - todo: lots of stuff! Haha 😜
+///
 class PercentBar: UIView {
-  
-  // MARK: Properties
+  // MARK: - Properties
   
   var percent:         CGFloat?
   var percentView:     UIView?
@@ -35,7 +43,7 @@ class PercentBar: UIView {
     }
   }
   
-  // MARK: Custom inits
+  // MARK: - Custom inits
   
   convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?) {
     self.init(
@@ -57,6 +65,8 @@ class PercentBar: UIView {
     self.style           = style
     self.styleAttributes = styleAttributes
   }
+  
+  // MARK: - Drawing
   
   override func layoutSubviews() {
     return

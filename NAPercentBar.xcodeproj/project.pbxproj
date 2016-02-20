@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		D8453FDD1C77FE6B003CA772 /* NAPercentBar.h in Headers */ = {isa = PBXBuildFile; fileRef = D8453FDC1C77FE6B003CA772 /* NAPercentBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8453FE51C77FE8E003CA772 /* PercentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8453FE41C77FE8E003CA772 /* PercentBar.swift */; };
+		D8453FE71C7803F1003CA772 /* Style&Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8453FE61C7803F1003CA772 /* Style&Attributes.swift */; };
+		D8453FE91C780683003CA772 /* PercentBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8453FE81C780683003CA772 /* PercentBarExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8453FD91C77FE6B003CA772 /* NAPercentBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NAPercentBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8453FDC1C77FE6B003CA772 /* NAPercentBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAPercentBar.h; sourceTree = "<group>"; };
 		D8453FDE1C77FE6B003CA772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8453FE41C77FE8E003CA772 /* PercentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBar.swift; sourceTree = "<group>"; };
+		D8453FE61C7803F1003CA772 /* Style&Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style&Attributes.swift"; sourceTree = "<group>"; };
+		D8453FE81C780683003CA772 /* PercentBarExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBarExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,9 @@
 		D8453FDB1C77FE6B003CA772 /* NAPercentBar */ = {
 			isa = PBXGroup;
 			children = (
+				D8453FE41C77FE8E003CA772 /* PercentBar.swift */,
+				D8453FE81C780683003CA772 /* PercentBarExtensions.swift */,
+				D8453FE61C7803F1003CA772 /* Style&Attributes.swift */,
 				D8453FDC1C77FE6B003CA772 /* NAPercentBar.h */,
 				D8453FDE1C77FE6B003CA772 /* Info.plist */,
 			);
@@ -74,6 +83,7 @@
 				D8453FD51C77FE6B003CA772 /* Frameworks */,
 				D8453FD61C77FE6B003CA772 /* Headers */,
 				D8453FD71C77FE6B003CA772 /* Resources */,
+				D8453FEA1C7806F6003CA772 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -126,11 +136,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D8453FEA1C7806F6003CA772 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8453FD41C77FE6B003CA772 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8453FE91C780683003CA772 /* PercentBarExtensions.swift in Sources */,
+				D8453FE51C77FE8E003CA772 /* PercentBar.swift in Sources */,
+				D8453FE71C7803F1003CA772 /* Style&Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +258,7 @@
 		D8453FE21C77FE6B003CA772 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -239,12 +269,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.NathanAnsel.NAPercentBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D8453FE31C77FE6B003CA772 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

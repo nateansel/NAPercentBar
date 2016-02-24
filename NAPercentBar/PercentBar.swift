@@ -28,6 +28,10 @@ class PercentBar: UIView {
   var rightWhiteLabel: UILabel?
   var rightColorLabel: UILabel?
   
+  internal var borderWidth:  CGFloat?
+  internal var cornerRadius: CGFloat?
+  internal var borderColor:  CGColor?
+  
   var style: NAPercentBarStyle? {
     didSet {
       if let style = style {

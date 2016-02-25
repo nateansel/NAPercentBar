@@ -55,10 +55,18 @@
 				D8453FE41C77FE8E003CA772 /* PercentBar.swift */,
 				D8453FE81C780683003CA772 /* PercentBarExtensions.swift */,
 				D8453FE61C7803F1003CA772 /* Style&Attributes.swift */,
+				D8763F4D1C7EBA3C0037EB77 /* Support Files */,
+			);
+			path = NAPercentBar;
+			sourceTree = "<group>";
+		};
+		D8763F4D1C7EBA3C0037EB77 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
 				D8453FDC1C77FE6B003CA772 /* NAPercentBar.h */,
 				D8453FDE1C77FE6B003CA772 /* Info.plist */,
 			);
-			path = NAPercentBar;
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +317,7 @@
 				D8453FE31C77FE6B003CA772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

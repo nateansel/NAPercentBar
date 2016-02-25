@@ -22,6 +22,9 @@ extension PercentBar {
         self.setNormalStyle()
       case NAPercentBarStyle.Line:
         self.setLineStyle()
+      default:
+        print("This style has not been accounted for in setStyle(). The style has not been set."
+              + "\nStyle: \(style.rawValue)")
     }
   }
   
@@ -54,7 +57,8 @@ extension PercentBar {
         case .BlackLabels:
           self.setAttributeBlackLabels()
         default:
-          print("This attribute has not been accounted for in setStyleAttributes()")
+          print("This attribute has not been accounted for in setStyleAttributes(), the attribute has not been set."
+                + "\nAttribute: \(styleAttribute.rawValue)")
       }
     }
   }

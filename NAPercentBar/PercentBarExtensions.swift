@@ -28,12 +28,27 @@ extension PercentBar {
     }
   }
   
+  /// A function private to this file that sets up the Normal style. Removes the
+  ///   lineView (if set), sets it to nil, and adds a border to the view.
   private func setNormalStyle() {
-    // TODO: Write code to set a normal style
+    borderWidth  = 1
+    borderColor  = color?.CGColor
+    cornerRadius = 5
+    lineView?.removeFromSuperview()
+    lineView     = nil
+    layoutIfNeeded()
+    // TODO: Needs to be completed.
   }
   
+  /// A function private to this file that sets up the Line style. Sets up and
+  ///   adds the line view to the main view.
   private func setLineStyle() {
-    // TODO: Write code to set a line style
+    let X      = frame.size.width * ((percent ?? 0) / 100) + (lineViewOffset ?? 0)
+    let Y      = frame.size.height - (lineViewHeight ?? 0)
+    let width  = frame.size.width * ((100 - (percent ?? 0)) / 100) - (lineViewOffset ?? 0)
+    let height = lineViewHeight ?? 0
+    lineView = UIView(frame: CGRect(x: X, y: Y, width: width, height: height))
+    // TODO: Needs to be completed.
   }
 }
 
@@ -63,7 +78,7 @@ extension PercentBar {
     }
   }
   
-  /// An function private to this file that adds the border to the main view.
+  /// A function private to this file that adds the border to the main view.
   ///   If any of the values borderWidth, cornerRadius, & borderColor are not
   ///   set, this function replaces them with a 0. This could remove the border
   ///   if none of them are set, so make sure all of the values are set **before**
@@ -74,21 +89,21 @@ extension PercentBar {
     layer.borderColor  = borderColor
   }
   
-  /// An function private to this file that removes the border of the main view.
+  /// A function private to this file that removes the border of the main view.
   private func setAttributeNoBorder() {
     layer.borderWidth  = 0
     layer.borderColor  = nil
     layer.cornerRadius = cornerRadius ?? 0
   }
   
-  /// An function private to this file that sets the color of the colorLabels of
+  /// A function private to this file that sets the color of the colorLabels of
   ///   this percent bar to the color of the percent view.
   private func setAttributeColorLabels() {
     leftColorLabel?.textColor  = color
     rightColorLabel?.textColor = color
   }
   
-  /// An function private to this file that sets the color of the colorLabels of
+  /// A function private to this file that sets the color of the colorLabels of
   ///   this percent bar to black.
   private func setAttributeBlackLabels() {
     leftColorLabel?.textColor  = UIColor.blackColor()

@@ -41,11 +41,17 @@ class PercentBar: UIView {
   internal var cornerRadius: CGFloat?
   internal var borderColor:  CGColor?
   
+  // MARK: Line Style
+  
+  internal var lineView:       UIView?
+  internal var lineViewHeight: CGFloat? = 2
+  internal var lineViewOffset: CGFloat? = 5
+  
   // MARK: Placement
   
   /// The number of pixels the labels will be offset from the sides of the main
   ///   view.
-  internal var labelOffset: CGFloat?
+  internal var labelOffset: CGFloat? = 5
   
   // MARK: Style
   

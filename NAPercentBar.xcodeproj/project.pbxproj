@@ -11,6 +11,7 @@
 		D8453FE51C77FE8E003CA772 /* PercentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8453FE41C77FE8E003CA772 /* PercentBar.swift */; };
 		D8453FE71C7803F1003CA772 /* Style&Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8453FE61C7803F1003CA772 /* Style&Attributes.swift */; };
 		D8453FE91C780683003CA772 /* PercentBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8453FE81C780683003CA772 /* PercentBarExtensions.swift */; };
+		D8B815DD1C81387700B2E648 /* PercentBarAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B815DC1C81387700B2E648 /* PercentBarAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		D8453FE41C77FE8E003CA772 /* PercentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBar.swift; sourceTree = "<group>"; };
 		D8453FE61C7803F1003CA772 /* Style&Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style&Attributes.swift"; sourceTree = "<group>"; };
 		D8453FE81C780683003CA772 /* PercentBarExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBarExtensions.swift; sourceTree = "<group>"; };
+		D8B815DC1C81387700B2E648 /* PercentBarAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBarAnimations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				D8453FE41C77FE8E003CA772 /* PercentBar.swift */,
 				D8453FE81C780683003CA772 /* PercentBarExtensions.swift */,
+				D8B815DC1C81387700B2E648 /* PercentBarAnimations.swift */,
 				D8453FE61C7803F1003CA772 /* Style&Attributes.swift */,
 				D8763F4D1C7EBA3C0037EB77 /* Support Files */,
 			);
@@ -167,6 +170,7 @@
 			files = (
 				D8453FE91C780683003CA772 /* PercentBarExtensions.swift in Sources */,
 				D8453FE51C77FE8E003CA772 /* PercentBar.swift in Sources */,
+				D8B815DD1C81387700B2E648 /* PercentBarAnimations.swift in Sources */,
 				D8453FE71C7803F1003CA772 /* Style&Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

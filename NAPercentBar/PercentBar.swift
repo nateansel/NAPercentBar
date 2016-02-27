@@ -22,13 +22,18 @@ class PercentBar: UIView {
   
   // MARK: Standard
   
-  var percent:         CGFloat?
-  var percentView:     UIView?
-  var color:           UIColor?
-  var leftWhiteLabel:  UILabel?
-  var leftColorLabel:  UILabel?
-  var rightWhiteLabel: UILabel?
-  var rightColorLabel: UILabel?
+  var percent:        CGFloat?
+  var color:          UIColor?
+  var leftLabelText:  String?
+  var rightLabelText: String?
+  
+  // MARK: - Subviews
+  
+  internal var percentView:     UIView?
+  internal var leftWhiteLabel:  UILabel?
+  internal var leftColorLabel:  UILabel?
+  internal var rightWhiteLabel: UILabel?
+  internal var rightColorLabel: UILabel?
   
   // MARK: Border
   
@@ -36,7 +41,14 @@ class PercentBar: UIView {
   internal var cornerRadius: CGFloat?
   internal var borderColor:  CGColor?
   
+  // MARK: Placement
+  
+  /// The number of pixels the labels will be offset from the sides of the main
+  ///   view.
+  internal var labelOffset: CGFloat?
+  
   // MARK: Style
+  
   var style: NAPercentBarStyle? {
     didSet {
       if let style = style {
@@ -54,26 +66,29 @@ class PercentBar: UIView {
   
   // MARK: - Custom inits
   
-  convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?) {
+  convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?, style: NAPercentBarStyle?) {
     self.init(
       frame:           frame,
       color:           color,
       percent:         percent,
       leftLabelText:   nil,
       rightLabelText:  nil,
-      style:           .Normal,
+      style:           style,
       styleAttributes: nil)
   }
   
   convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?, leftLabelText: String?, rightLabelText: String?, style: NAPercentBarStyle?, styleAttributes: [NAPercentBarStyleAttributes]?) {
     self.init(frame: frame)
     clipsToBounds = true
+    labelOffset   = CGFloat(10)
     
     // Set property values
     self.percent         = percent
     self.color           = color
     self.style           = style
     self.styleAttributes = styleAttributes
+    self.leftLabelText   = leftLabelText
+    self.rightLabelText  = rightLabelText
     
     // Set the views and labels to default views and labels, to be set up later.
     percentView          = UIView()
@@ -81,6 +96,27 @@ class PercentBar: UIView {
     leftWhiteLabel       = UILabel()
     rightColorLabel      = UILabel()
     rightWhiteLabel      = UILabel()
+    
+    // Add the white labels to the percentView
+    if let leftWhiteLabel = leftWhiteLabel {
+      percentView?.addSubview(leftWhiteLabel)
+    }
+    if let rightWhiteLabel = rightWhiteLabel {
+      percentView?.addSubview(rightWhiteLabel)
+    }
+    
+    // Add the color labels to the main view
+    if let leftColorLabel = leftColorLabel {
+      addSubview(leftColorLabel)
+    }
+    if let rightColorLabel = rightColorLabel {
+      addSubview(rightColorLabel)
+    }
+    
+    // Add percentView to the main view
+    if let percentView = percentView {
+      addSubview(percentView)
+    }
   }
   
   // MARK: - Drawing
@@ -94,6 +130,8 @@ class PercentBar: UIView {
     super.layoutSubviews()
     
     // TODO: Actually layout the subviews in this method
+    setupPercentView()
+    setupLabels()
   }
   
   /// Uses the properties that are set in the main view to set up the percentView.
@@ -116,5 +154,49 @@ class PercentBar: UIView {
     // Even if percent does not exist, still clip the subviews to the bounds of
     //   percentView.
     percentView?.clipsToBounds = true
+  }
+  
+  /// Uses the properties that are set in the main view to set up the left and
+  ///   right labels. Only called in layoutSubviews() for now, but can be called
+  ///   anytime when in need of setting up the percentView.
+  ///
+  /// - author: Nathan Ansel
+  ///
+  private func setupLabels() {
+    // Only execute this code if the left label text and both left labels are
+    //   not nil.
+    if let leftLabelText = leftLabelText, leftColorLabel = leftColorLabel, leftWhiteLabel = leftWhiteLabel {
+      leftColorLabel.text = leftLabelText
+      leftWhiteLabel.text = leftLabelText
+      
+      leftColorLabel.textColor = color
+      leftWhiteLabel.textColor = UIColor.whiteColor()
+      
+      leftColorLabel.sizeToFit()
+      leftWhiteLabel.sizeToFit()
+      
+      leftColorLabel.center = CGPoint(
+        x: (labelOffset ?? 0) + (leftColorLabel.frame.size.width / 2),
+        y: (frame.size.height / 2))
+      leftWhiteLabel.center = leftColorLabel.center
+    }
+    
+    // Only execute this code if the right label text and both right labels are
+    //   not nil.
+    if let rightLabelText = rightLabelText, rightColorLabel = rightColorLabel, rightWhiteLabel = rightWhiteLabel {
+      rightColorLabel.text = rightLabelText
+      rightWhiteLabel.text = rightLabelText
+      
+      rightColorLabel.textColor = color
+      rightWhiteLabel.textColor = UIColor.whiteColor()
+      
+      rightColorLabel.sizeToFit()
+      rightWhiteLabel.sizeToFit()
+      
+      rightColorLabel.center = CGPoint(
+        x: (frame.size.width) - ((rightColorLabel.frame.size.width / 2) + (labelOffset ?? 0)),
+        y: frame.size.height / 2)
+      rightWhiteLabel.center = rightColorLabel.center
+    }
   }
 }

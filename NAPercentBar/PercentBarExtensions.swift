@@ -19,9 +19,11 @@ extension PercentBar {
   func setStyle(style: NAPercentBarStyle) {
     switch style {
       case NAPercentBarStyle.Normal:
-        self.setNormalStyle()
+        setNormalStyle()
+      case NAPercentBarStyle.Detail:
+        setDetailStyle()
       case NAPercentBarStyle.Line:
-        self.setLineStyle()
+        setLineStyle()
       default:
         print("This style has not been accounted for in setStyle(). The style has not been set."
               + "\nStyle: \(style.rawValue)")
@@ -31,13 +33,24 @@ extension PercentBar {
   /// A function private to this file that sets up the Normal style. Removes the
   ///   lineView (if set), sets it to nil, and adds a border to the view.
   private func setNormalStyle() {
-    borderWidth  = 1
-    borderColor  = color?.CGColor
-    cornerRadius = 5
+    borderWidth     = 1
+    borderColor     = color?.CGColor
+    cornerRadius    = frame.size.height / 2
     lineView?.removeFromSuperview()
-    lineView     = nil
+    lineView        = nil
+    leftLabelText   = nil
+    rightLabelText  = nil
+    styleAttributes = [.Border]
+  }
+  
+  private func setDetailStyle() {
+    borderWidth     = 1
+    borderColor     = color?.CGColor
+    cornerRadius    = 5
+    lineView?.removeFromSuperview()
+    lineView        = nil
+    styleAttributes = [.Border, .ColorLabels]
     layoutIfNeeded()
-    // TODO: Needs to be completed.
   }
   
   /// A function private to this file that sets up the Line style. Sets up and

@@ -17,23 +17,23 @@ import UIKit
 /// - version: 0.1
 /// - todo: lots of stuff! Haha 😜
 ///
-class PercentBar: UIView {
+public class PercentBar: UIView {
   // MARK: - Properties
   
   // MARK: Standard
   
-  var percent:        CGFloat?
-  var color:          UIColor?
-  var leftLabelText:  String?
-  var rightLabelText: String?
+  public var percent:        CGFloat?
+  public var color:          UIColor?
+  public var leftLabelText:  String?
+  public var rightLabelText: String?
   
   // MARK: - Subviews
   
-  internal var percentView:     UIView?
-  internal var leftWhiteLabel:  UILabel?
-  internal var leftColorLabel:  UILabel?
-  internal var rightWhiteLabel: UILabel?
-  internal var rightColorLabel: UILabel?
+  public var percentView:     UIView?  = UIView()
+  internal var leftWhiteLabel:  UILabel? = UILabel()
+  internal var leftColorLabel:  UILabel? = UILabel()
+  internal var rightWhiteLabel: UILabel? = UILabel()
+  internal var rightColorLabel: UILabel? = UILabel()
   
   // MARK: Border
   
@@ -55,14 +55,15 @@ class PercentBar: UIView {
   
   // MARK: Style
   
-  var style: NAPercentBarStyle? {
+  public var style: NAPercentBarStyle? {
     didSet {
       if let style = style {
         setStyle(style)
       }
     }
   }
-  var styleAttributes: [NAPercentBarStyleAttributes]? {
+  
+  public var styleAttributes: [NAPercentBarStyleAttributes]? {
     didSet {
       if let styleAttributes = styleAttributes {
         setStyleAttributes(styleAttributes)
@@ -72,7 +73,7 @@ class PercentBar: UIView {
   
   // MARK: - Custom inits
   
-  convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?, style: NAPercentBarStyle?) {
+  public convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?, style: NAPercentBarStyle?) {
     self.init(
       frame:           frame,
       color:           color,
@@ -83,10 +84,8 @@ class PercentBar: UIView {
       styleAttributes: nil)
   }
   
-  convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?, leftLabelText: String?, rightLabelText: String?, style: NAPercentBarStyle?, styleAttributes: [NAPercentBarStyleAttributes]?) {
+  public convenience init(frame: CGRect, color: UIColor?, percent: CGFloat?, leftLabelText: String?, rightLabelText: String?, style: NAPercentBarStyle?, styleAttributes: [NAPercentBarStyleAttributes]?) {
     self.init(frame: frame)
-    clipsToBounds = true
-    labelOffset   = CGFloat(10)
     
     // Set property values
     self.percent         = percent
@@ -95,13 +94,19 @@ class PercentBar: UIView {
     self.styleAttributes = styleAttributes
     self.leftLabelText   = leftLabelText
     self.rightLabelText  = rightLabelText
+  }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    clipsToBounds = true
+    labelOffset   = CGFloat(10)
     
     // Set the views and labels to default views and labels, to be set up later.
-    percentView          = UIView()
-    leftColorLabel       = UILabel()
-    leftWhiteLabel       = UILabel()
-    rightColorLabel      = UILabel()
-    rightWhiteLabel      = UILabel()
+    percentView     = UIView()
+    leftColorLabel  = UILabel()
+    leftWhiteLabel  = UILabel()
+    rightColorLabel = UILabel()
+    rightWhiteLabel = UILabel()
     
     // Add the white labels to the percentView
     if let leftWhiteLabel = leftWhiteLabel {
@@ -125,6 +130,11 @@ class PercentBar: UIView {
     }
   }
   
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+//    fatalError("init(coder:) has not been implemented")
+  }
+  
   // MARK: - Drawing
   
   // An override on layoutSubviews(), to see when this function will be called,
@@ -132,12 +142,16 @@ class PercentBar: UIView {
   //     [StackOverflow Question](http://stackoverflow.com/questions/728372/when-is-layoutsubviews-called)
   //   & [Logic High Blog](http://blog.logichigh.com/2011/03/16/when-does-layoutsubviews-get-called/)
   //
-  override func layoutSubviews() {
+  override public func layoutSubviews() {
     super.layoutSubviews()
     
-    // TODO: Actually layout the subviews in this method
+    setupBorders()
     setupPercentView()
     setupLabels()
+  }
+  
+  private func setupBorders() {
+    layer.borderColor = borderColor
   }
   
   /// Uses the properties that are set in the main view to set up the percentView.

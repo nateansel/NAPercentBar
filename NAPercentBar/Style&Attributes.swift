@@ -9,16 +9,20 @@
 import Foundation
 
 /// A definition of the different styles of percent bars avalible in
-///   NAPercentBar.
+///   NAPercentBar. Each of the different styles can be previewed in the
+///   provided Sketch document.
 ///
 /// - author: Nathan Ansel
 ///
 /// - todo: Add more styles
 ///
-enum NAPercentBarStyle: String {
+public enum NAPercentBarStyle: String {
+  /// A simple rectangular progress bar with rounded corners.
+  case Normal
+  
   /// A rounded bar with the percentage marked inside the bar with a
   ///   colored view the size of the percent of the original view.
-  case Normal
+  case Detail
   
   /// A simple line that spans the length of the percent of the whole view.
   case Line
@@ -30,7 +34,7 @@ enum NAPercentBarStyle: String {
 ///
 /// - todo: Add more attributes
 ///
-enum NAPercentBarStyleAttributes: String {
+public enum NAPercentBarStyleAttributes: String {
   /// Add a border to the main view.
   case Border
   

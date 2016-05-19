@@ -44,7 +44,7 @@ extension PercentBar {
   ///                 arguement that tells if the animation completed successfully
   ///
   public func springAnimateToFullWidth(duration duration: NSTimeInterval, delay: NSTimeInterval, springDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
-    let fullWidth = frame.size.width * (percent ?? 0 / 100)
+    let fullWidth = frame.size.width * (percent ?? 0 / CGFloat(100))
     UIView.animateWithDuration(duration,
       delay:                  delay,
       usingSpringWithDamping: springDamping,
@@ -139,7 +139,7 @@ extension PercentBar {
   /// - author: Nathan Ansel
   ///
   public func snapToFullWidth() {
-    percentView?.frame.size.width = frame.size.width * (percent ?? 0 / 100)
+    percentView?.frame.size.width = frame.size.width * (percent ?? 0 / CGFloat(100))
   }
 }
 

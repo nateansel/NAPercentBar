@@ -1,0 +1,10 @@
+framework module NAPercentBar {
+  umbrella header "NAPercentBar.h"
+
+  export *
+  module * { export * }
+}
+
+module NAPercentBar.Swift {
+    header "NAPercentBar-Swift.h"
+}

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  NAPercentBarExample
 //
-//  Created by Nathan Ansel on 3/28/16.
+//  Created by Nathan Ansel on 5/18/16.
 //  Copyright © 2016 Nathan Ansel. All rights reserved.
 //
 

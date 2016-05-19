@@ -35,7 +35,7 @@ extension PercentBar {
   private func setNormalStyle() {
     borderWidth     = 1
     borderColor     = color?.CGColor
-    cornerRadius    = frame.size.height / 2
+    cornerRadius    = frame.size.height / CGFloat(2)
     lineView?.removeFromSuperview()
     lineView        = nil
     leftLabelText   = nil
@@ -56,9 +56,9 @@ extension PercentBar {
   /// A function private to this file that sets up the Line style. Sets up and
   ///   adds the line view to the main view.
   private func setLineStyle() {
-    let X      = frame.size.width * ((percent ?? 0) / 100) + (lineViewOffset ?? 0)
+    let X      = frame.size.width * ((percent ?? 0) / CGFloat(100)) + (lineViewOffset ?? 0)
     let Y      = frame.size.height - (lineViewHeight ?? 0)
-    let width  = frame.size.width * ((100 - (percent ?? 0)) / 100) - (lineViewOffset ?? 0)
+    let width  = frame.size.width * ((100 - (percent ?? 0)) / CGFloat(100)) - (lineViewOffset ?? 0)
     let height = lineViewHeight ?? 0
     lineView = UIView(frame: CGRect(x: X, y: Y, width: width, height: height))
     // TODO: Needs to be completed.

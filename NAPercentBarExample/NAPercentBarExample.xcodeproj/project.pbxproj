@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8164FC31CB0AB62002620C6 /* NAPercentBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8164FC21CB0AB5E002620C6 /* NAPercentBar.framework */; };
-		D8886F531CA9ADC700C5D37C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8886F521CA9ADC700C5D37C /* AppDelegate.swift */; };
-		D8886F551CA9ADC700C5D37C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8886F541CA9ADC700C5D37C /* ViewController.swift */; };
-		D8886F581CA9ADC700C5D37C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8886F561CA9ADC700C5D37C /* Main.storyboard */; };
-		D8886F5A1CA9ADC700C5D37C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8886F591CA9ADC700C5D37C /* Assets.xcassets */; };
-		D8886F5D1CA9ADC700C5D37C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8886F5B1CA9ADC700C5D37C /* LaunchScreen.storyboard */; };
+		0A23D81F6556402A5E9D9A3E /* libPods-NAPercentBarExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDC0BD7D58FB714F90AB9A6 /* libPods-NAPercentBarExample.a */; };
+		D83738EF1CED53590020DE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738EE1CED53590020DE04 /* AppDelegate.swift */; };
+		D83738F11CED53590020DE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738F01CED53590020DE04 /* ViewController.swift */; };
+		D83738F41CED53590020DE04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83738F21CED53590020DE04 /* Main.storyboard */; };
+		D83738F61CED53590020DE04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83738F51CED53590020DE04 /* Assets.xcassets */; };
+		D83738F91CED53590020DE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83738F71CED53590020DE04 /* LaunchScreen.storyboard */; };
+		D837390C1CED54DA0020DE04 /* NAPercentBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D837390B1CED545F0020DE04 /* NAPercentBar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D8164FC11CB0AB5E002620C6 /* PBXContainerItemProxy */ = {
+		D837390A1CED545F0020DE04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D8164FBD1CB0AB5E002620C6 /* NAPercentBar.xcodeproj */;
+			containerPortal = D83739061CED545F0020DE04 /* NAPercentBar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D8453FD91C77FE6B003CA772;
 			remoteInfo = NAPercentBar;
@@ -26,76 +27,102 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D8164FBD1CB0AB5E002620C6 /* NAPercentBar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NAPercentBar.xcodeproj; path = ../NAPercentBar.xcodeproj; sourceTree = "<group>"; };
-		D8886F4F1CA9ADC600C5D37C /* NAPercentBarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NAPercentBarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8886F521CA9ADC700C5D37C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8886F541CA9ADC700C5D37C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D8886F571CA9ADC700C5D37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D8886F591CA9ADC700C5D37C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D8886F5C1CA9ADC700C5D37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D8886F5E1CA9ADC700C5D37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDC0BD7D58FB714F90AB9A6 /* libPods-NAPercentBarExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NAPercentBarExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EFA97BD6CA70074A2A3469C /* Pods-NAPercentBarExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NAPercentBarExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NAPercentBarExample/Pods-NAPercentBarExample.debug.xcconfig"; sourceTree = "<group>"; };
+		AC1D1A7367433AB4FA91762F /* Pods-NAPercentBarExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NAPercentBarExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NAPercentBarExample/Pods-NAPercentBarExample.release.xcconfig"; sourceTree = "<group>"; };
+		D83738EB1CED53590020DE04 /* NAPercentBarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NAPercentBarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83738EE1CED53590020DE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D83738F01CED53590020DE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D83738F31CED53590020DE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D83738F51CED53590020DE04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D83738F81CED53590020DE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D83738FA1CED53590020DE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D83739061CED545F0020DE04 /* NAPercentBar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NAPercentBar.xcodeproj; path = Pods/../../NAPercentBar.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D8886F4C1CA9ADC600C5D37C /* Frameworks */ = {
+		D83738E81CED53590020DE04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8164FC31CB0AB62002620C6 /* NAPercentBar.framework in Frameworks */,
+				D837390C1CED54DA0020DE04 /* NAPercentBar.framework in Frameworks */,
+				0A23D81F6556402A5E9D9A3E /* libPods-NAPercentBarExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D8164FBE1CB0AB5E002620C6 /* Products */ = {
+		6330BAA2FAEF53654E35223E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D8164FC21CB0AB5E002620C6 /* NAPercentBar.framework */,
+				5DDC0BD7D58FB714F90AB9A6 /* libPods-NAPercentBarExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D83738E21CED53590020DE04 = {
+			isa = PBXGroup;
+			children = (
+				D83739061CED545F0020DE04 /* NAPercentBar.xcodeproj */,
+				D83738ED1CED53590020DE04 /* NAPercentBarExample */,
+				D83738EC1CED53590020DE04 /* Products */,
+				E08F9740069C19AE48F19BF8 /* Pods */,
+				6330BAA2FAEF53654E35223E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D83738EC1CED53590020DE04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D83738EB1CED53590020DE04 /* NAPercentBarExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D8886F461CA9ADC600C5D37C = {
+		D83738ED1CED53590020DE04 /* NAPercentBarExample */ = {
 			isa = PBXGroup;
 			children = (
-				D8164FBD1CB0AB5E002620C6 /* NAPercentBar.xcodeproj */,
-				D8886F511CA9ADC700C5D37C /* NAPercentBarExample */,
-				D8886F501CA9ADC600C5D37C /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		D8886F501CA9ADC600C5D37C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D8886F4F1CA9ADC600C5D37C /* NAPercentBarExample.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D8886F511CA9ADC700C5D37C /* NAPercentBarExample */ = {
-			isa = PBXGroup;
-			children = (
-				D8886F521CA9ADC700C5D37C /* AppDelegate.swift */,
-				D8886F541CA9ADC700C5D37C /* ViewController.swift */,
-				D8886F561CA9ADC700C5D37C /* Main.storyboard */,
-				D8886F591CA9ADC700C5D37C /* Assets.xcassets */,
-				D8886F5B1CA9ADC700C5D37C /* LaunchScreen.storyboard */,
-				D8886F5E1CA9ADC700C5D37C /* Info.plist */,
+				D83738EE1CED53590020DE04 /* AppDelegate.swift */,
+				D83738F01CED53590020DE04 /* ViewController.swift */,
+				D83738F21CED53590020DE04 /* Main.storyboard */,
+				D83738F51CED53590020DE04 /* Assets.xcassets */,
+				D83738F71CED53590020DE04 /* LaunchScreen.storyboard */,
+				D83738FA1CED53590020DE04 /* Info.plist */,
 			);
 			path = NAPercentBarExample;
+			sourceTree = "<group>";
+		};
+		D83739071CED545F0020DE04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D837390B1CED545F0020DE04 /* NAPercentBar.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E08F9740069C19AE48F19BF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EFA97BD6CA70074A2A3469C /* Pods-NAPercentBarExample.debug.xcconfig */,
+				AC1D1A7367433AB4FA91762F /* Pods-NAPercentBarExample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8886F4E1CA9ADC600C5D37C /* NAPercentBarExample */ = {
+		D83738EA1CED53590020DE04 /* NAPercentBarExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8886F611CA9ADC700C5D37C /* Build configuration list for PBXNativeTarget "NAPercentBarExample" */;
+			buildConfigurationList = D83738FD1CED53590020DE04 /* Build configuration list for PBXNativeTarget "NAPercentBarExample" */;
 			buildPhases = (
-				D8886F4B1CA9ADC600C5D37C /* Sources */,
-				D8886F4C1CA9ADC600C5D37C /* Frameworks */,
-				D8886F4D1CA9ADC600C5D37C /* Resources */,
+				D4B005281A40E0A5AAAE2B9A /* Check Pods Manifest.lock */,
+				D83738E71CED53590020DE04 /* Sources */,
+				D83738E81CED53590020DE04 /* Frameworks */,
+				D83738E91CED53590020DE04 /* Resources */,
+				440438C260809B4ADAFB7CC5 /* Embed Pods Frameworks */,
+				301DE444CC6B7B4C5C92FC58 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -103,26 +130,26 @@
 			);
 			name = NAPercentBarExample;
 			productName = NAPercentBarExample;
-			productReference = D8886F4F1CA9ADC600C5D37C /* NAPercentBarExample.app */;
+			productReference = D83738EB1CED53590020DE04 /* NAPercentBarExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D8886F471CA9ADC600C5D37C /* Project object */ = {
+		D83738E31CED53590020DE04 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Nathan Ansel";
 				TargetAttributes = {
-					D8886F4E1CA9ADC600C5D37C = {
-						CreatedOnToolsVersion = 7.3;
+					D83738EA1CED53590020DE04 = {
+						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 37E2RLU4H9;
 					};
 				};
 			};
-			buildConfigurationList = D8886F4A1CA9ADC600C5D37C /* Build configuration list for PBXProject "NAPercentBarExample" */;
+			buildConfigurationList = D83738E61CED53590020DE04 /* Build configuration list for PBXProject "NAPercentBarExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -130,70 +157,118 @@
 				en,
 				Base,
 			);
-			mainGroup = D8886F461CA9ADC600C5D37C;
-			productRefGroup = D8886F501CA9ADC600C5D37C /* Products */;
+			mainGroup = D83738E21CED53590020DE04;
+			productRefGroup = D83738EC1CED53590020DE04 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D8164FBE1CB0AB5E002620C6 /* Products */;
-					ProjectRef = D8164FBD1CB0AB5E002620C6 /* NAPercentBar.xcodeproj */;
+					ProductGroup = D83739071CED545F0020DE04 /* Products */;
+					ProjectRef = D83739061CED545F0020DE04 /* NAPercentBar.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				D8886F4E1CA9ADC600C5D37C /* NAPercentBarExample */,
+				D83738EA1CED53590020DE04 /* NAPercentBarExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D8164FC21CB0AB5E002620C6 /* NAPercentBar.framework */ = {
+		D837390B1CED545F0020DE04 /* NAPercentBar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = NAPercentBar.framework;
-			remoteRef = D8164FC11CB0AB5E002620C6 /* PBXContainerItemProxy */;
+			remoteRef = D837390A1CED545F0020DE04 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D8886F4D1CA9ADC600C5D37C /* Resources */ = {
+		D83738E91CED53590020DE04 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8886F5D1CA9ADC700C5D37C /* LaunchScreen.storyboard in Resources */,
-				D8886F5A1CA9ADC700C5D37C /* Assets.xcassets in Resources */,
-				D8886F581CA9ADC700C5D37C /* Main.storyboard in Resources */,
+				D83738F91CED53590020DE04 /* LaunchScreen.storyboard in Resources */,
+				D83738F61CED53590020DE04 /* Assets.xcassets in Resources */,
+				D83738F41CED53590020DE04 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		301DE444CC6B7B4C5C92FC58 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NAPercentBarExample/Pods-NAPercentBarExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		440438C260809B4ADAFB7CC5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NAPercentBarExample/Pods-NAPercentBarExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4B005281A40E0A5AAAE2B9A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		D8886F4B1CA9ADC600C5D37C /* Sources */ = {
+		D83738E71CED53590020DE04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8886F551CA9ADC700C5D37C /* ViewController.swift in Sources */,
-				D8886F531CA9ADC700C5D37C /* AppDelegate.swift in Sources */,
+				D83738F11CED53590020DE04 /* ViewController.swift in Sources */,
+				D83738EF1CED53590020DE04 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D8886F561CA9ADC700C5D37C /* Main.storyboard */ = {
+		D83738F21CED53590020DE04 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D8886F571CA9ADC700C5D37C /* Base */,
+				D83738F31CED53590020DE04 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D8886F5B1CA9ADC700C5D37C /* LaunchScreen.storyboard */ = {
+		D83738F71CED53590020DE04 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D8886F5C1CA9ADC700C5D37C /* Base */,
+				D83738F81CED53590020DE04 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -201,7 +276,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D8886F5F1CA9ADC700C5D37C /* Debug */ = {
+		D83738FB1CED53590020DE04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,7 +321,7 @@
 			};
 			name = Debug;
 		};
-		D8886F601CA9ADC700C5D37C /* Release */ = {
+		D83738FC1CED53590020DE04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,11 +359,11 @@
 			};
 			name = Release;
 		};
-		D8886F621CA9ADC700C5D37C /* Debug */ = {
+		D83738FE1CED53590020DE04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EFA97BD6CA70074A2A3469C /* Pods-NAPercentBarExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NAPercentBarExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NathanAnsel.NAPercentBarExample;
@@ -296,11 +371,11 @@
 			};
 			name = Debug;
 		};
-		D8886F631CA9ADC700C5D37C /* Release */ = {
+		D83738FF1CED53590020DE04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC1D1A7367433AB4FA91762F /* Pods-NAPercentBarExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NAPercentBarExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NathanAnsel.NAPercentBarExample;
@@ -311,25 +386,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8886F4A1CA9ADC600C5D37C /* Build configuration list for PBXProject "NAPercentBarExample" */ = {
+		D83738E61CED53590020DE04 /* Build configuration list for PBXProject "NAPercentBarExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8886F5F1CA9ADC700C5D37C /* Debug */,
-				D8886F601CA9ADC700C5D37C /* Release */,
+				D83738FB1CED53590020DE04 /* Debug */,
+				D83738FC1CED53590020DE04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8886F611CA9ADC700C5D37C /* Build configuration list for PBXNativeTarget "NAPercentBarExample" */ = {
+		D83738FD1CED53590020DE04 /* Build configuration list for PBXNativeTarget "NAPercentBarExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8886F621CA9ADC700C5D37C /* Debug */,
-				D8886F631CA9ADC700C5D37C /* Release */,
+				D83738FE1CED53590020DE04 /* Debug */,
+				D83738FF1CED53590020DE04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D8886F471CA9ADC600C5D37C /* Project object */;
+	rootObject = D83738E31CED53590020DE04 /* Project object */;
 }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D8886F4E1CA9ADC600C5D37C"
+               BlueprintIdentifier = "D83738EA1CED53590020DE04"
                BuildableName = "NAPercentBarExample.app"
                BlueprintName = "NAPercentBarExample"
                ReferencedContainer = "container:NAPercentBarExample.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8886F4E1CA9ADC600C5D37C"
+            BlueprintIdentifier = "D83738EA1CED53590020DE04"
             BuildableName = "NAPercentBarExample.app"
             BlueprintName = "NAPercentBarExample"
             ReferencedContainer = "container:NAPercentBarExample.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8886F4E1CA9ADC600C5D37C"
+            BlueprintIdentifier = "D83738EA1CED53590020DE04"
             BuildableName = "NAPercentBarExample.app"
             BlueprintName = "NAPercentBarExample"
             ReferencedContainer = "container:NAPercentBarExample.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8886F4E1CA9ADC600C5D37C"
+            BlueprintIdentifier = "D83738EA1CED53590020DE04"
             BuildableName = "NAPercentBarExample.app"
             BlueprintName = "NAPercentBarExample"
             ReferencedContainer = "container:NAPercentBarExample.xcodeproj">

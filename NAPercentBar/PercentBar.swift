@@ -29,7 +29,7 @@ public class PercentBar: UIView {
   
   // MARK: - Subviews
   
-  public var percentView:     UIView?  = UIView()
+  public var percentView:       UIView?  = UIView()
   internal var leftWhiteLabel:  UILabel? = UILabel()
   internal var leftColorLabel:  UILabel? = UILabel()
   internal var rightWhiteLabel: UILabel? = UILabel()
@@ -132,6 +132,7 @@ public class PercentBar: UIView {
   
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+    
 //    fatalError("init(coder:) has not been implemented")
   }
   
@@ -164,7 +165,7 @@ public class PercentBar: UIView {
     // Only execute the code if percent exists, otherwise don't do anything.
     //   Nothing should be initialized when there is no percent value.
     if let percent = percent {
-      let percentViewWidth = frame.size.width * (percent / 100)
+      let percentViewWidth = frame.size.width * (percent / CGFloat(100))
       percentView?.frame = CGRect(x: 0, y: 0, width: percentViewWidth, height: frame.size.height)
       percentView?.backgroundColor = color
       if let cornerRadius = cornerRadius {
@@ -196,8 +197,8 @@ public class PercentBar: UIView {
       leftWhiteLabel.sizeToFit()
       
       leftColorLabel.center = CGPoint(
-        x: (labelOffset ?? 0) + (leftColorLabel.frame.size.width / 2),
-        y: (frame.size.height / 2))
+        x: (labelOffset ?? 0) + (leftColorLabel.frame.size.width / CGFloat(2)),
+        y: (frame.size.height / CGFloat(2)))
       leftWhiteLabel.center = leftColorLabel.center
     }
     
@@ -215,7 +216,7 @@ public class PercentBar: UIView {
       
       rightColorLabel.center = CGPoint(
         x: (frame.size.width) - ((rightColorLabel.frame.size.width / 2) + (labelOffset ?? 0)),
-        y: frame.size.height / 2)
+        y: frame.size.height / CGFloat(2))
       rightWhiteLabel.center = rightColorLabel.center
     }
   }

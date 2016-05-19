@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,38 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6I-YW-7Mx">
-                                <rect key="frame" x="534" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="NormalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="57v-H6-Y2u"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IlO-fH-0Ud" customClass="PercentBar" customModule="NAPercentBar">
-                                <rect key="frame" x="20" y="28" width="506" height="30"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apw-7o-e8B" customClass="NewPercentBar" customModule="NAPercentBar">
+                                <rect key="frame" x="20" y="28" width="506" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4YK-0R-dhH"/>
+                                    <constraint firstAttribute="height" constant="40" id="W6R-cC-8m1"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lV1-fZ-ViS">
+                                <rect key="frame" x="529" y="33" width="57" height="30"/>
+                                <state key="normal" title="Animate"/>
+                                <connections>
+                                    <action selector="animateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V9V-IB-g24"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IlO-fH-0Ud" firstAttribute="height" secondItem="c6I-YW-7Mx" secondAttribute="height" id="0xN-0K-XyU"/>
-                            <constraint firstAttribute="trailing" secondItem="c6I-YW-7Mx" secondAttribute="trailing" constant="20" id="9Ru-rw-kdh"/>
-                            <constraint firstItem="c6I-YW-7Mx" firstAttribute="centerY" secondItem="IlO-fH-0Ud" secondAttribute="centerY" id="kCf-UQ-UYU"/>
-                            <constraint firstItem="IlO-fH-0Ud" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="qJl-27-4bQ"/>
-                            <constraint firstItem="c6I-YW-7Mx" firstAttribute="leading" secondItem="IlO-fH-0Ud" secondAttribute="trailing" constant="8" id="uNI-xZ-328"/>
-                            <constraint firstItem="IlO-fH-0Ud" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xau-ve-0D7"/>
+                            <constraint firstItem="lV1-fZ-ViS" firstAttribute="centerY" secondItem="apw-7o-e8B" secondAttribute="centerY" id="9Mm-7t-Brd"/>
+                            <constraint firstItem="lV1-fZ-ViS" firstAttribute="leading" secondItem="apw-7o-e8B" secondAttribute="trailing" constant="8" id="AcI-6l-dqk"/>
+                            <constraint firstItem="apw-7o-e8B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="R8w-Ru-o9F"/>
+                            <constraint firstItem="lV1-fZ-ViS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="b97-yf-HJJ"/>
+                            <constraint firstItem="apw-7o-e8B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xlZ-EP-kOs"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="NormalView" destination="IlO-fH-0Ud" id="Dsd-0U-EeP"/>
+                        <outlet property="percentBar" destination="apw-7o-e8B" id="NbB-i8-X1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="474"/>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>

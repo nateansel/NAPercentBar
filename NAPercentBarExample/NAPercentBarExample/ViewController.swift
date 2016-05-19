@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  NAPercentBarExample
 //
-//  Created by Nathan Ansel on 3/28/16.
+//  Created by Nathan Ansel on 5/18/16.
 //  Copyright © 2016 Nathan Ansel. All rights reserved.
 //
 
@@ -10,32 +10,29 @@ import UIKit
 import NAPercentBar
 
 class ViewController: UIViewController {
+  
+  @IBOutlet weak var percentBar: NewPercentBar!
+  
+  var percent = CGFloat(0.00)
 
-  @IBOutlet weak var NormalView: PercentBar!
-  
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    NormalView.percent = CGFloat(50.0)
-    NormalView.color = UIColor.purpleColor()
-    NormalView.leftLabelText = "0%"
-    NormalView.rightLabelText = "100%"
-    NormalView.style = .Normal
-    NormalView.layoutSubviews()
-    NormalView.animateToFullWidth()
+    
+    percentBar.percent = percent
+    percentBar.color = UIColor.greenColor()
+    percentBar.leftLabelText = "0%"
+    percentBar.rightLabelText = "100%"
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  @IBAction func animateButtonPressed(sender: UIButton) {
+    if percent == 0.0 {
+      percent = 0.5
+      percentBar.animateToFullWidth(newPercent: percent)
+    }
+    else {
+      percent = 0.0
+      percentBar.animateToFullWidth(newPercent: percent)
+    }
   }
-
-  @IBAction func NormalButtonPressed(sender: AnyObject) {
-    NormalView.animateToFullWidth(newPercent: CGFloat(100))
-    print(NormalView.percent)
-    print(NormalView.percentView)
-  }
-
 }
 

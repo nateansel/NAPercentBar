@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class NewPercentBar: UIView {
+public class PercentBar: UIView {
   
   // MARK: - Public Properties
   

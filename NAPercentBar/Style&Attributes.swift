@@ -15,28 +15,15 @@
 public enum NAPercentBarStyle: String {
   /// A simple square-cornered rectangle.
   ///
-  case Rectangle
+  case Rectangle = "Rectangle"
   
   /// A simple rounded rectangle.
   ///
-  case RoundedRectangle
+  case RoundedRectangle = "Rounded Rectangle"
   
   /// A rounded rectangle with both sides rounded all the way.
   ///
-  case Round
-  
-  
-  
-  
-  /// A simple rectangular progress bar with rounded corners.
-  case Normal
-  
-  /// A rounded bar with the percentage marked inside the bar with a
-  ///   colored view the size of the percent of the original view.
-  case Detail
-  
-  /// A simple line that spans the length of the percent of the whole view.
-  case Line
+  case Round = "Round"
 }
 
 /// Used to define the visual attributes that a percent bar will have.

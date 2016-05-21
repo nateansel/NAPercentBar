@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - To Full Width
 
-extension NewPercentBar {
+extension PercentBar {
   /// Animates the percentView its full width with defined presets and a spring.
   ///   The duration is set to 0.3 seconds, the delay is set to 0, a
   ///   springDampining of 0.7, no initialSpringVelocity, and no options or
@@ -148,7 +148,7 @@ extension NewPercentBar {
 
 // MARK: - To Zero Width
 
-extension NewPercentBar {
+extension PercentBar {
   /// Animates the percentView to a width of zero with defined presets.
   ///   The duration is set to 0.3 seconds, the delay is set to 0, and no
   ///   options or completion blocks are used.

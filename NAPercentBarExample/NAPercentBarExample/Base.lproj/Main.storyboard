@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apw-7o-e8B" customClass="NewPercentBar" customModule="NAPercentBar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apw-7o-e8B" customClass="PercentBar" customModule="NAPercentBar">
                                 <rect key="frame" x="20" y="28" width="495" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -39,7 +39,7 @@
                                     <action selector="animateButtonPressedForRoundedRectangle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBF-SA-Tts"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBr-Ux-INs" customClass="NewPercentBar" customModule="NAPercentBar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBr-Ux-INs" customClass="PercentBar" customModule="NAPercentBar">
                                 <rect key="frame" x="20" y="124" width="495" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -53,7 +53,7 @@
                                     <action selector="animateButtonPressedForRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBF-3D-qHQ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2k-gc-3Un" customClass="NewPercentBar" customModule="NAPercentBar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2k-gc-3Un" customClass="PercentBar" customModule="NAPercentBar">
                                 <rect key="frame" x="20" y="76" width="495" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>

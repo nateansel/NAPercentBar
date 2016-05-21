@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D83738B71CEC02450020DE04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83738B61CEC02450020DE04 /* UIKit.framework */; };
-		D83738B91CEC03660020DE04 /* NewPercentBarAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738B81CEC03660020DE04 /* NewPercentBarAnimations.swift */; };
-		D83739101CED65940020DE04 /* NewPercentBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837390E1CED65940020DE04 /* NewPercentBarExtensions.swift */; };
+		D83738B91CEC03660020DE04 /* PercentBarAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738B81CEC03660020DE04 /* PercentBarAnimations.swift */; };
+		D83739101CED65940020DE04 /* PercentBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D837390E1CED65940020DE04 /* PercentBarExtensions.swift */; };
 		D8453FDD1C77FE6B003CA772 /* NAPercentBar.h in Headers */ = {isa = PBXBuildFile; fileRef = D8453FDC1C77FE6B003CA772 /* NAPercentBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8453FE71C7803F1003CA772 /* Style&Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8453FE61C7803F1003CA772 /* Style&Attributes.swift */; };
-		D8F2A9441CD98F96005022FA /* NewPercentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A9431CD98F96005022FA /* NewPercentBar.swift */; };
+		D8F2A9441CD98F96005022FA /* PercentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A9431CD98F96005022FA /* PercentBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D83738B61CEC02450020DE04 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D83738B81CEC03660020DE04 /* NewPercentBarAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPercentBarAnimations.swift; sourceTree = "<group>"; };
-		D837390E1CED65940020DE04 /* NewPercentBarExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPercentBarExtensions.swift; sourceTree = "<group>"; };
+		D83738B81CEC03660020DE04 /* PercentBarAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBarAnimations.swift; sourceTree = "<group>"; };
+		D837390E1CED65940020DE04 /* PercentBarExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBarExtensions.swift; sourceTree = "<group>"; };
 		D8453FD91C77FE6B003CA772 /* NAPercentBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NAPercentBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8453FDC1C77FE6B003CA772 /* NAPercentBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAPercentBar.h; sourceTree = "<group>"; };
 		D8453FDE1C77FE6B003CA772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8453FE61C7803F1003CA772 /* Style&Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style&Attributes.swift"; sourceTree = "<group>"; };
-		D8F2A9431CD98F96005022FA /* NewPercentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPercentBar.swift; sourceTree = "<group>"; };
+		D8F2A9431CD98F96005022FA /* PercentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +58,9 @@
 		D8453FDB1C77FE6B003CA772 /* NAPercentBar */ = {
 			isa = PBXGroup;
 			children = (
-				D8F2A9431CD98F96005022FA /* NewPercentBar.swift */,
-				D83738B81CEC03660020DE04 /* NewPercentBarAnimations.swift */,
-				D837390E1CED65940020DE04 /* NewPercentBarExtensions.swift */,
+				D8F2A9431CD98F96005022FA /* PercentBar.swift */,
+				D83738B81CEC03660020DE04 /* PercentBarAnimations.swift */,
+				D837390E1CED65940020DE04 /* PercentBarExtensions.swift */,
 				D8453FE61C7803F1003CA772 /* Style&Attributes.swift */,
 				D8763F4D1C7EBA3C0037EB77 /* Support Files */,
 			);
@@ -172,9 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D83738B91CEC03660020DE04 /* NewPercentBarAnimations.swift in Sources */,
-				D83739101CED65940020DE04 /* NewPercentBarExtensions.swift in Sources */,
-				D8F2A9441CD98F96005022FA /* NewPercentBar.swift in Sources */,
+				D83738B91CEC03660020DE04 /* PercentBarAnimations.swift in Sources */,
+				D83739101CED65940020DE04 /* PercentBarExtensions.swift in Sources */,
+				D8F2A9441CD98F96005022FA /* PercentBar.swift in Sources */,
 				D8453FE71C7803F1003CA772 /* Style&Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

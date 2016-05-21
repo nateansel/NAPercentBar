@@ -11,9 +11,9 @@ import NAPercentBar
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var rectanglePercentBar: NewPercentBar!
-  @IBOutlet weak var roundedRectanglePercentBar: NewPercentBar!
-  @IBOutlet weak var roundPercentBar: NewPercentBar!
+  @IBOutlet weak var rectanglePercentBar: PercentBar!
+  @IBOutlet weak var roundedRectanglePercentBar: PercentBar!
+  @IBOutlet weak var roundPercentBar: PercentBar!
   
   var percent = CGFloat(0.00)
 

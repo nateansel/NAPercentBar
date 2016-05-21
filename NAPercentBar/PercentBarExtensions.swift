@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NewPercentBar {
+extension PercentBar {
   /// Sets the style for this PercentBar.
   ///
   /// - parameter style: A NAPercentBarStyle to set up the PercentBar with.
@@ -16,15 +16,8 @@ extension NewPercentBar {
   ///
   /// - author: Nathan Ansel
   ///
-  func setStyle(style: NAPercentBarStyle) {
+  internal func setStyle(style: NAPercentBarStyle) {
     switch style {
-      case NAPercentBarStyle.Normal:
-        setNormalStyle()
-      case NAPercentBarStyle.Detail:
-        setDetailStyle()
-      case NAPercentBarStyle.Line:
-//        setLineStyle()
-        break
       case NAPercentBarStyle.Rectangle:
         setRectangleStyle()
       case NAPercentBarStyle.RoundedRectangle:
@@ -51,39 +44,9 @@ extension NewPercentBar {
     cornerRadius = frame.size.height / 2
     styleAttributes = [.Border]
   }
-  
-  /// A function private to this file that sets up the Normal style. Removes the
-  ///   lineView (if set), sets it to nil, and adds a border to the view.
-  private func setNormalStyle() {
-    borderWidth     = 1
-    borderColor     = color ?? UIColor.clearColor()
-    cornerRadius    = frame.size.height / CGFloat(2)
-    leftLabelText   = nil
-    rightLabelText  = nil
-    styleAttributes = [.Border]
-  }
-  
-  private func setDetailStyle() {
-    borderWidth     = 1
-    borderColor     = color ?? UIColor.clearColor()
-    cornerRadius    = 5
-    styleAttributes = [.Border, .ColorLabels]
-    layoutIfNeeded()
-  }
-  
-  /// A function private to this file that sets up the Line style. Sets up and
-  ///   adds the line view to the main view.
-//  private func setLineStyle() {
-//    let X      = frame.size.width * ((percent ?? 0) / CGFloat(100)) + (lineViewOffset ?? 0)
-//    let Y      = frame.size.height - (lineViewHeight ?? 0)
-//    let width  = frame.size.width * ((100 - (percent ?? 0)) / CGFloat(100)) - (lineViewOffset ?? 0)
-//    let height = lineViewHeight ?? 0
-//    lineView = UIView(frame: CGRect(x: X, y: Y, width: width, height: height))
-//    // TODO: Needs to be completed.
-//  }
 }
 
-extension NewPercentBar {
+extension PercentBar {
   /// Sets the style attributes for this PercentBar.
   ///
   /// - parameter styleAttributes: A list of all the style attributes to set. An
@@ -91,7 +54,7 @@ extension NewPercentBar {
   ///
   /// - author: Nathan Ansel
   ///
-  func setStyleAttributes(styleAttributes: [NAPercentBarStyleAttributes]) {
+  internal func setStyleAttributes(styleAttributes: [NAPercentBarStyleAttributes]) {
     for styleAttribute in styleAttributes {
       switch styleAttribute {
         case .Border:
@@ -110,7 +73,7 @@ extension NewPercentBar {
   }
   
   /// A function private to this file that adds the border to the main view.
-  ///   If any of the values borderWidth, cornerRadius, & borderColor are not
+  ///   If any of the values borderWidth, & borderColor are not
   ///   set, this function replaces them with a 0. This could remove the border
   ///   if none of them are set, so make sure all of the values are set **before**
   ///   running this function.

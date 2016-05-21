@@ -180,7 +180,7 @@ extension NewPercentBar {
       delay:      delay,
       options:    options ?? UIViewAnimationOptions.CurveEaseInOut,
       animations: {
-        self.percentConstraint.constant = 0
+        self.snapToZeroWidth()
       }) { (finished: Bool) -> Void in
         completion?(finished)
     }

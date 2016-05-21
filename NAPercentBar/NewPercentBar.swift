@@ -62,8 +62,17 @@ public class NewPercentBar: UIView {
   
   // MARK: Border
   
-  internal var borderWidth:  CGFloat = 0
-  internal var cornerRadius: CGFloat = 0
+  internal var borderWidth:  CGFloat = 1.0 {
+    didSet {
+      layer.borderWidth = borderWidth
+    }
+  }
+  internal var cornerRadius: CGFloat = 0.0 {
+    didSet {
+      layer.cornerRadius = cornerRadius
+      percentView.layer.cornerRadius = cornerRadius
+    }
+  }
   internal var borderColor:  UIColor = UIColor.clearColor()
   
   // MARK: Line Style
@@ -76,6 +85,7 @@ public class NewPercentBar: UIView {
   
   /// The number of pixels the labels will be offset from the sides of the main
   ///   view.
+  ///
   internal var labelOffset:       CGFloat = 5
   internal var percentConstraint: NSLayoutConstraint!
   
@@ -87,7 +97,25 @@ public class NewPercentBar: UIView {
     }
     return frame.size.width
   }
-  public var widthHint: CGFloat?
+  public var widthHint:   CGFloat?
+  
+  // MARK: Style
+  
+  public var style: NAPercentBarStyle? {
+    didSet {
+      if let style = style {
+        setStyle(style)
+      }
+    }
+  }
+  
+  public var styleAttributes: [NAPercentBarStyleAttributes]? {
+    didSet {
+      if let styleAttributes = styleAttributes {
+        setStyleAttributes(styleAttributes)
+      }
+    }
+  }
 
   // MARK: - Methods
   
@@ -105,10 +133,17 @@ public class NewPercentBar: UIView {
     setup()
   }
   
+  /// Sets up the PercentBar class. Calls all the functions related to instatiating
+  ///   subviews and creating constraints.
+  ///
   private func setup() {
     createInternalViews()
     createConstraints()
     setupLabels()
+  }
+  
+  public override func layoutSubviews() {
+    cornerRadius = CGFloat(cornerRadius)
   }
   
   // MARK: Setting up the bar
@@ -128,6 +163,7 @@ public class NewPercentBar: UIView {
     insertSubview(leftColorLabel, belowSubview: percentView)
     insertSubview(rightColorLabel, belowSubview: percentView)
     
+    layer.masksToBounds = true
     percentView.clipsToBounds = true
   }
   
@@ -168,7 +204,7 @@ public class NewPercentBar: UIView {
     leftColorLabel.leftAnchor.constraintEqualToAnchor(leftWhiteLabel.leftAnchor).active = true
     leftColorLabel.centerYAnchor.constraintEqualToAnchor(leftWhiteLabel.centerYAnchor).active = true
     
-    rightWhiteLabel.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: labelOffset).active = true
+    rightWhiteLabel.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -labelOffset).active = true
     rightWhiteLabel.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
     
     rightColorLabel.rightAnchor.constraintEqualToAnchor(rightWhiteLabel.rightAnchor).active = true

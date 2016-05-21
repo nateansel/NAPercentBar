@@ -11,28 +11,76 @@ import NAPercentBar
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var percentBar: NewPercentBar!
+  @IBOutlet weak var rectanglePercentBar: NewPercentBar!
+  @IBOutlet weak var roundedRectanglePercentBar: NewPercentBar!
+  @IBOutlet weak var roundPercentBar: NewPercentBar!
   
   var percent = CGFloat(0.00)
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    percentBar.percent = percent
-    percentBar.color = UIColor.greenColor()
-    percentBar.leftLabelText = "0%"
-    percentBar.rightLabelText = "100%"
+    rectanglePercentBar.percent        = 0.0
+    rectanglePercentBar.color          = UIColor.greenColor()
+    rectanglePercentBar.leftLabelText  = "0%"
+    rectanglePercentBar.rightLabelText = "100%"
+    rectanglePercentBar.style          = .Rectangle
+    
+    roundedRectanglePercentBar.percent        = 0.0
+    roundedRectanglePercentBar.color          = UIColor.purpleColor()
+    roundedRectanglePercentBar.leftLabelText  = "Start"
+    roundedRectanglePercentBar.rightLabelText = "End"
+    roundedRectanglePercentBar.style          = .RoundedRectangle
+    
+    roundPercentBar.percent = 0.5
+    roundPercentBar.color = UIColor.blueColor()
+    roundPercentBar.leftLabelText = "0%"
+    roundPercentBar.style = .Round
   }
   
-  @IBAction func animateButtonPressed(sender: UIButton) {
-    if percent == 0.0 {
-      percent = 0.5
-      percentBar.animateToFullWidth(newPercent: percent)
+  @IBAction func animateButtonPressedForRectangle(sender: UIButton) {
+    if rectanglePercentBar.percent == 0.0 {
+      rectanglePercentBar.animateToFullWidth(newPercent: 0.5)
     }
     else {
-      percent = 0.0
-      percentBar.animateToFullWidth(newPercent: percent)
+      rectanglePercentBar.animateToFullWidth(newPercent: 0.0)
     }
+  }
+  
+  @IBAction func animateButtonPressedForRoundedRectangle(sender: UIButton) {
+    if roundedRectanglePercentBar.percent == 0.0 {
+      roundedRectanglePercentBar.percent = 0.9
+      roundedRectanglePercentBar.springAnimateToFullWidth(
+        duration:              0.8,
+        delay:                 0.0,
+        springDamping:         0.5,
+        initialSpringVelocity: 0.0,
+        options:               .CurveEaseInOut,
+        completion:            nil)
+    }
+    else {
+      roundedRectanglePercentBar.percent = 0.0
+      roundedRectanglePercentBar.animateToZeroWidth()
+    }
+  }
+  
+  @IBAction func animateButtonPressedForRound(sender: UIButton) {
+    roundPercentBar.animateToFullWidth(
+      newPercent: 0.75,
+      duration:   0.5,
+      delay:      0.0,
+      options:    nil,
+      completion: { (finished: Bool) in
+        self.roundPercentBar.leftLabelText = "\(Int(self.roundPercentBar.percent! * 100))%"
+        self.roundPercentBar.animateToFullWidth(
+          newPercent: 0.35,
+          duration:   0.5,
+          delay:      0.5,
+          options:    nil,
+          completion: { (finished: Bool) in
+            self.roundPercentBar.leftLabelText = "\(Int(self.roundPercentBar.percent! * 100))%"
+        })
+    })
   }
 }
 

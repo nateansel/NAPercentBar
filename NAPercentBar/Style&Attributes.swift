@@ -6,17 +6,28 @@
 //  Copyright © 2016 Nathan Ansel. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 
 /// A definition of the different styles of percent bars avalible in
 ///   NAPercentBar. Each of the different styles can be previewed in the
 ///   provided Sketch document.
 ///
-/// - author: Nathan Ansel
-///
-/// - todo: Add more styles
-///
 public enum NAPercentBarStyle: String {
+  /// A simple square-cornered rectangle.
+  ///
+  case Rectangle
+  
+  /// A simple rounded rectangle.
+  ///
+  case RoundedRectangle
+  
+  /// A rounded rectangle with both sides rounded all the way.
+  ///
+  case Round
+  
+  
+  
+  
   /// A simple rectangular progress bar with rounded corners.
   case Normal
   
@@ -29,10 +40,6 @@ public enum NAPercentBarStyle: String {
 }
 
 /// Used to define the visual attributes that a percent bar will have.
-///
-/// - author: Nathan Ansel
-///
-/// - todo: Add more attributes
 ///
 public enum NAPercentBarStyleAttributes: String {
   /// Add a border to the main view.

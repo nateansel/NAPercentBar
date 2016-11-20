@@ -11,11 +11,9 @@ import NAPercentBar
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var rectanglePercentBar: PercentBar!
+  @IBOutlet weak var rectanglePercentBar:        PercentBarCG!
   @IBOutlet weak var roundedRectanglePercentBar: PercentBar!
-  @IBOutlet weak var roundPercentBar: PercentBar!
-  
-  var percent = CGFloat(0.00)
+  @IBOutlet weak var roundPercentBar:            PercentBar!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,7 +22,8 @@ class ViewController: UIViewController {
     rectanglePercentBar.color          = UIColor.greenColor()
     rectanglePercentBar.leftLabelText  = "0%"
     rectanglePercentBar.rightLabelText = "100%"
-    rectanglePercentBar.style          = .Rectangle
+//    rectanglePercentBar.style          = .Rectangle
+//    rectanglePercentBar.styleAttributes = [.Border, .BlackLabels]
     
     roundedRectanglePercentBar.percent        = 0.0
     roundedRectanglePercentBar.color          = UIColor.purpleColor()
@@ -35,15 +34,24 @@ class ViewController: UIViewController {
     roundPercentBar.percent = 0.5
     roundPercentBar.color = UIColor.blueColor()
     roundPercentBar.leftLabelText = "0%"
-    roundPercentBar.style = .Round
+    roundPercentBar.style = .InsetWithBorder
   }
   
   @IBAction func animateButtonPressedForRectangle(sender: UIButton) {
     if rectanglePercentBar.percent == 0.0 {
-      rectanglePercentBar.animateToFullWidth(newPercent: 0.5)
+//      rectanglePercentBar.percent = 0.5
+//      rectanglePercentBar.animateTo(newPercent: 0.5)
+      rectanglePercentBar.springAnimateTo(newPercent: 0.5)
+//      rectanglePercentBar.animateTo(newPercent: 0.5, duration: 0.8, completion: {
+//        print(self.rectanglePercentBar.frame.size.width)
+//      })
     }
     else {
-      rectanglePercentBar.animateToFullWidth(newPercent: 0.0)
+      rectanglePercentBar.animateTo(newPercent: 0.0)
+//      rectanglePercentBar.percent = 0.0
+//      rectanglePercentBar.animateTo(newPercent: 0.0, duration: 0.8, completion: {
+//        print(self.rectanglePercentBar.frame.size.width)
+//      })
     }
   }
   

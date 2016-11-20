@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PercentBar: UIView {
+open class PercentBar: UIView {
   
   // MARK: - Public Properties
   
@@ -18,24 +18,24 @@ public class PercentBar: UIView {
   ///   Updating this property will not make the bar update. Use any of the
   ///   animation or snapping functions provided to display the change.
   ///
-  public var percent: CGFloat?
+  open var percent: CGFloat?
   
   /// The color to be used on both the percent bar and on the labels before the
   ///   percent bar covers them up.
   ///
-  public var color: UIColor? {
+  open var color: UIColor? {
     didSet {
       percentView.backgroundColor = color
       leftColorLabel.textColor    = color
       rightColorLabel.textColor   = color
       centerColorLabel.textColor  = color
-      borderColor                 = color ?? UIColor.clearColor()
+      borderColor                 = color ?? UIColor.clear
     }
   }
   
   /// The text to be displayed on the left side of the bar.
   ///
-  public var leftLabelText: String? {
+  open var leftLabelText: String? {
     didSet {
       leftWhiteLabel.text = leftLabelText
       leftColorLabel.text = leftLabelText
@@ -44,7 +44,7 @@ public class PercentBar: UIView {
   
   /// The text to be displayed on the right side of the bar.
   ///
-  public var rightLabelText: String? {
+  open var rightLabelText: String? {
     didSet {
       rightWhiteLabel.text = rightLabelText
       rightColorLabel.text = rightLabelText
@@ -53,7 +53,7 @@ public class PercentBar: UIView {
   
   /// The text to be displayed in the center of the bar.
   ///
-  public var centerLabelText: String? {
+  open var centerLabelText: String? {
     didSet {
       centerWhiteLabel.text = centerLabelText
       centerColorLabel.text = centerLabelText
@@ -90,7 +90,7 @@ public class PercentBar: UIView {
       }
     }
   }
-  internal var borderColor:  UIColor = UIColor.clearColor()
+  internal var borderColor:  UIColor = UIColor.clear
   
   // MARK: Line Style
   
@@ -127,12 +127,12 @@ public class PercentBar: UIView {
   }
   
   // TODO: Documentation
-  public var widthHint: CGFloat?
+  open var widthHint: CGFloat?
   
   // MARK: Style
   
   // TODO: Documentation
-  public var style: NAPercentBarStyle? {
+  open var style: NAPercentBarStyle? {
     didSet {
       if let style = style {
         setStyle(style)
@@ -141,7 +141,7 @@ public class PercentBar: UIView {
   }
   
   // TODO: Documentation
-  public var styleAttributes: [NAPercentBarStyleAttributes]? {
+  open var styleAttributes: [NAPercentBarStyleAttributes]? {
     didSet {
       if let styleAttributes = styleAttributes {
         setStyleAttributes(styleAttributes)
@@ -168,13 +168,13 @@ public class PercentBar: UIView {
   /// Sets up the PercentBar class. Calls all the functions related to instatiating
   ///   subviews and creating constraints.
   ///
-  private func setup() {
+  fileprivate func setup() {
     createInternalViews()
     createConstraints()
     setupLabels()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     cornerRadius = CGFloat(cornerRadius)
   }
   
@@ -182,7 +182,7 @@ public class PercentBar: UIView {
   
   /// Creates all the internal views that live in this view.
   ///
-  private func createInternalViews() {
+  fileprivate func createInternalViews() {
     percentView      = UIView()
     leftWhiteLabel   = UILabel()
     leftColorLabel   = UILabel()
@@ -206,7 +206,7 @@ public class PercentBar: UIView {
   /// Sets `translatesAutoresizingMaskIntoConstraints` equal to false for every
   ///   view. This gets rid of auto-generated constraints.
   ///
-  private func removeTranslatesMaskToConstraints() {
+  fileprivate func removeTranslatesMaskToConstraints() {
     translatesAutoresizingMaskIntoConstraints                  = false
     percentView.translatesAutoresizingMaskIntoConstraints      = false
     leftWhiteLabel.translatesAutoresizingMaskIntoConstraints   = false
@@ -219,73 +219,73 @@ public class PercentBar: UIView {
   
   /// Creates the constraints for the views.
   ///
-  private func createConstraints() {
+  fileprivate func createConstraints() {
     removeTranslatesMaskToConstraints()
     
     percentViewLeftConstraint = NSLayoutConstraint(
       item: percentView,
-      attribute: .Left,
-      relatedBy: .Equal,
+      attribute: .left,
+      relatedBy: .equal,
       toItem: self,
-      attribute: .Left,
+      attribute: .left,
       multiplier: 1.0,
       constant: 0.0)
-    percentViewLeftConstraint.active = true
+    percentViewLeftConstraint.isActive = true
     
     percentViewTopConstraint = NSLayoutConstraint(
       item: percentView,
-      attribute: .Top,
-      relatedBy: .Equal,
+      attribute: .top,
+      relatedBy: .equal,
       toItem: self,
-      attribute: .Top,
+      attribute: .top,
       multiplier: 1.0,
       constant: 0.0)
-    percentViewTopConstraint.active = true
+    percentViewTopConstraint.isActive = true
     
     percentViewBottomConstraint = NSLayoutConstraint(
       item: percentView,
-      attribute: .Bottom,
-      relatedBy: .Equal,
+      attribute: .bottom,
+      relatedBy: .equal,
       toItem: self,
-      attribute: .Bottom,
+      attribute: .bottom,
       multiplier: 1.0,
       constant: 0.0)
-    percentViewBottomConstraint.active = true
+    percentViewBottomConstraint.isActive = true
     
     percentConstraint = NSLayoutConstraint(
       item: percentView,
-      attribute: .Right,
-      relatedBy: .Equal,
+      attribute: .right,
+      relatedBy: .equal,
       toItem: percentView,
-      attribute: .Left,
+      attribute: .left,
       multiplier: 1.0,
       constant: 0.0)
-    percentConstraint.active = true
+    percentConstraint.isActive = true
     
-    leftWhiteLabel.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: labelOffset).active = true
-    leftWhiteLabel.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
+    leftWhiteLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: labelOffset).isActive = true
+    leftWhiteLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     
-    leftColorLabel.leftAnchor.constraintEqualToAnchor(leftWhiteLabel.leftAnchor).active = true
-    leftColorLabel.centerYAnchor.constraintEqualToAnchor(leftWhiteLabel.centerYAnchor).active = true
+    leftColorLabel.leftAnchor.constraint(equalTo: leftWhiteLabel.leftAnchor).isActive = true
+    leftColorLabel.centerYAnchor.constraint(equalTo: leftWhiteLabel.centerYAnchor).isActive = true
     
-    rightWhiteLabel.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -labelOffset).active = true
-    rightWhiteLabel.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
+    rightWhiteLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -labelOffset).isActive = true
+    rightWhiteLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     
-    rightColorLabel.rightAnchor.constraintEqualToAnchor(rightWhiteLabel.rightAnchor).active = true
-    rightColorLabel.centerYAnchor.constraintEqualToAnchor(rightWhiteLabel.centerYAnchor).active = true
+    rightColorLabel.rightAnchor.constraint(equalTo: rightWhiteLabel.rightAnchor).isActive = true
+    rightColorLabel.centerYAnchor.constraint(equalTo: rightWhiteLabel.centerYAnchor).isActive = true
     
-    centerWhiteLabel.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
-    centerWhiteLabel.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
-    centerWhiteLabel.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
+    centerWhiteLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+    centerWhiteLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+    centerWhiteLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     
-    centerColorLabel.leftAnchor.constraintEqualToAnchor(centerWhiteLabel.leftAnchor).active = true
-    centerColorLabel.rightAnchor.constraintEqualToAnchor(centerWhiteLabel.rightAnchor).active = true
-    centerColorLabel.centerYAnchor.constraintEqualToAnchor(centerWhiteLabel.centerYAnchor).active = true
+    centerColorLabel.leftAnchor.constraint(equalTo: centerWhiteLabel.leftAnchor).isActive = true
+    centerColorLabel.rightAnchor.constraint(equalTo: centerWhiteLabel.rightAnchor).isActive = true
+    centerColorLabel.centerYAnchor.constraint(equalTo: centerWhiteLabel.centerYAnchor).isActive = true
   }
   
-  private func setupLabels() {
-    leftWhiteLabel.textColor   = UIColor.whiteColor()
-    rightWhiteLabel.textColor  = UIColor.whiteColor()
-    centerWhiteLabel.textColor = UIColor.whiteColor()
+  fileprivate func setupLabels() {
+    leftWhiteLabel.textColor   = UIColor.white
+    rightWhiteLabel.textColor  = UIColor.white
+    centerWhiteLabel.textColor = UIColor.white
   }
 }

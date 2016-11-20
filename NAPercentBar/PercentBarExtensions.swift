@@ -16,7 +16,7 @@ extension PercentBar {
   ///
   /// - author: Nathan Ansel
   ///
-  internal func setStyle(style: NAPercentBarStyle) {
+  internal func setStyle(_ style: NAPercentBarStyle) {
     switch style {
       case .Rectangle:
         setRectangleStyle()
@@ -33,25 +33,25 @@ extension PercentBar {
     }
   }
   
-  private func setRectangleStyle() {
+  fileprivate func setRectangleStyle() {
     cornerRadius      = 0.0
     styleAttributes   = [.Border]
     percentViewInsets = 0.0
   }
   
-  private func setRoundedRectangleStyle() {
+  fileprivate func setRoundedRectangleStyle() {
     cornerRadius      = 8.0
     styleAttributes   = [.Border]
     percentViewInsets = 0.0
   }
   
-  private func setRoundStyle() {
+  fileprivate func setRoundStyle() {
     cornerRadius      = frame.size.height / 2
     styleAttributes   = [.Border]
     percentViewInsets = 0.0
   }
   
-  private func setInsetWithBorderStyle() {
+  fileprivate func setInsetWithBorderStyle() {
     borderWidth       = 2.0
     styleAttributes   = [.Border]
     percentViewInsets = 4.0
@@ -66,7 +66,7 @@ extension PercentBar {
   ///
   /// - author: Nathan Ansel
   ///
-  internal func setStyleAttributes(styleAttributes: [NAPercentBarStyleAttributes]) {
+  internal func setStyleAttributes(_ styleAttributes: [NAPercentBarStyleAttributes]) {
     for styleAttribute in styleAttributes {
       switch styleAttribute {
         case .Border:
@@ -89,28 +89,28 @@ extension PercentBar {
   ///   set, this function replaces them with a 0. This could remove the border
   ///   if none of them are set, so make sure all of the values are set **before**
   ///   running this function.
-  private func setAttributeBorder() {
+  fileprivate func setAttributeBorder() {
     layer.borderWidth  = borderWidth ?? 0
-    layer.borderColor  = borderColor.CGColor
+    layer.borderColor  = borderColor.cgColor
   }
   
   /// A function private to this file that removes the border of the main view.
-  private func setAttributeNoBorder() {
+  fileprivate func setAttributeNoBorder() {
     layer.borderWidth  = 0
     layer.borderColor  = nil
   }
   
   /// A function private to this file that sets the color of the colorLabels of
   ///   this percent bar to the color of the percent view.
-  private func setAttributeColorLabels() {
+  fileprivate func setAttributeColorLabels() {
     leftColorLabel?.textColor  = color
     rightColorLabel?.textColor = color
   }
   
   /// A function private to this file that sets the color of the colorLabels of
   ///   this percent bar to black.
-  private func setAttributeBlackLabels() {
-    leftColorLabel?.textColor  = UIColor.blackColor()
-    rightColorLabel?.textColor = UIColor.blackColor()
+  fileprivate func setAttributeBlackLabels() {
+    leftColorLabel?.textColor  = UIColor.black
+    rightColorLabel?.textColor = UIColor.black
   }
 }

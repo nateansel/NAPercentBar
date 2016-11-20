@@ -45,13 +45,13 @@ extension PercentBar {
   ///                 This block returns nothing and takes in one boolean
   ///                 arguement that tells if the animation completed successfully
   ///
-  public func springAnimateToFullWidth(duration duration: NSTimeInterval, delay: NSTimeInterval, springDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
-    UIView.animateWithDuration(
-      duration,
+  public func springAnimateToFullWidth(duration: TimeInterval, delay: TimeInterval, springDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
+    UIView.animate(
+      withDuration: duration,
       delay:                  delay,
       usingSpringWithDamping: springDamping,
       initialSpringVelocity:  initialSpringVelocity,
-      options:                options ?? UIViewAnimationOptions.CurveEaseInOut,
+      options:                options ?? UIViewAnimationOptions(),
       animations: {
         self.snapToFullWidth()
       },
@@ -70,7 +70,7 @@ extension PercentBar {
   /// - parameter newPercent: The new percent value that will be set for the bar
   ///                         and then animated to.
   ///
-  public func animateToFullWidth(newPercent newPercent: CGFloat) {
+  public func animateToFullWidth(newPercent: CGFloat) {
     percent = newPercent
     animateToFullWidth()
   }
@@ -90,7 +90,7 @@ extension PercentBar {
   ///                 This block returns nothing and takes in one boolean
   ///                 arguement that tells if the animation completed successfully.
   ///
-  public func animateToFullWidth(newPercent newPercent: CGFloat, duration: NSTimeInterval, delay: NSTimeInterval, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
+  public func animateToFullWidth(newPercent: CGFloat, duration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
     percent = newPercent
     animateToFullWidth(
       duration:   duration,
@@ -126,7 +126,7 @@ extension PercentBar {
   ///                 This block returns nothing and takes in one boolean
   ///                 arguement that tells if the animation completed successfully.
   ///
-  public func animateToFullWidth(duration duration: NSTimeInterval, delay: NSTimeInterval, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
+  public func animateToFullWidth(duration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
     springAnimateToFullWidth(
       duration:              duration,
       delay:                 delay,
@@ -175,10 +175,10 @@ extension PercentBar {
   ///                 This block returns nothing and takes in one boolean
   ///                 arguement that tells if the animation completed successfully.
   ///
-  public func animateToZeroWidth(duration duration: NSTimeInterval, delay: NSTimeInterval, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
-    UIView.animateWithDuration(duration,
+  public func animateToZeroWidth(duration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions?, completion: ((Bool) -> ())?) {
+    UIView.animate(withDuration: duration,
       delay:      delay,
-      options:    options ?? UIViewAnimationOptions.CurveEaseInOut,
+      options:    options ?? UIViewAnimationOptions(),
       animations: {
         self.snapToZeroWidth()
       }) { (finished: Bool) -> Void in

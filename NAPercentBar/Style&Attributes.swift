@@ -24,6 +24,10 @@ public enum NAPercentBarStyle: String {
   /// A rounded rectangle with both sides rounded all the way.
   ///
   case Round = "Round"
+  
+  /// A bordered round rectangle.
+  ///
+  case InsetWithBorder = "InsetWithBorder"
 }
 
 /// Used to define the visual attributes that a percent bar will have.

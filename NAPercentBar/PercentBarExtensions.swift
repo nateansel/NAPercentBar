@@ -18,31 +18,43 @@ extension PercentBar {
   ///
   internal func setStyle(style: NAPercentBarStyle) {
     switch style {
-      case NAPercentBarStyle.Rectangle:
+      case .Rectangle:
         setRectangleStyle()
-      case NAPercentBarStyle.RoundedRectangle:
+      case .RoundedRectangle:
         setRoundedRectangleStyle()
-      case NAPercentBarStyle.Round:
+      case .Round:
         setRoundStyle()
-      default:
-        print("This style has not been accounted for in setStyle(). The style has not been set."
-              + "\nStyle: \(style.rawValue)")
+      case .InsetWithBorder:
+        setRoundStyle()
+        setInsetWithBorderStyle()
+//      default:
+//        print("This style has not been accounted for in setStyle(). The style has not been set."
+//              + "\nStyle: \(style.rawValue)")
     }
   }
   
   private func setRectangleStyle() {
-    cornerRadius = 0.0
-    styleAttributes = [.NoBorder]
+    cornerRadius      = 0.0
+    styleAttributes   = [.Border]
+    percentViewInsets = 0.0
   }
   
   private func setRoundedRectangleStyle() {
-    cornerRadius = 8.0
-    styleAttributes = [.Border]
+    cornerRadius      = 8.0
+    styleAttributes   = [.Border]
+    percentViewInsets = 0.0
   }
   
   private func setRoundStyle() {
-    cornerRadius = frame.size.height / 2
-    styleAttributes = [.Border]
+    cornerRadius      = frame.size.height / 2
+    styleAttributes   = [.Border]
+    percentViewInsets = 0.0
+  }
+  
+  private func setInsetWithBorderStyle() {
+    borderWidth       = 2.0
+    styleAttributes   = [.Border]
+    percentViewInsets = 4.0
   }
 }
 
@@ -65,9 +77,9 @@ extension PercentBar {
           self.setAttributeColorLabels()
         case .BlackLabels:
           self.setAttributeBlackLabels()
-        default:
-          print("This attribute has not been accounted for in setStyleAttributes(), the attribute has not been set."
-                + "\nAttribute: \(styleAttribute.rawValue)")
+//        default:
+//          print("This attribute has not been accounted for in setStyleAttributes(), the attribute has not been set."
+//                + "\nAttribute: \(styleAttribute.rawValue)")
       }
     }
   }
